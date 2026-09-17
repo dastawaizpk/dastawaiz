@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>DASTAWAIZ — Legal · Digital · Secure | Contract Drafting & Review Pakistan</title>
+<meta name="description" content="DASTAWAIZ is Pakistan's professional legal document platform. Contract drafting, review & legal consultation by an Advocate High Court. Online. 48-hour delivery."/>
+<meta name="keywords" content="legal documents Pakistan, contract drafting Lahore, NDA Pakistan, employment contract Pakistan, contract review, legal consultation online Pakistan"/>
+<meta property="og:title" content="DASTAWAIZ — Legal · Digital · Secure"/>
+<meta property="og:description" content="Professional legal documents by an Advocate High Court. Online. 48-hour delivery."/>
+<meta property="og:url" content="https://dastawaiz.com"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://dastawaiz.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-deep:#0A1020;--navy-mid:#111D30;
+  --gold:#C9A84C;--gold-pale:rgba(201,168,76,0.12);--gold-faint:rgba(201,168,76,0.06);
+  --teal:#2A7F8C;--teal-pale:rgba(42,127,140,0.12);
+  --white:#FFFFFF;--off:#F5F2EC;--warm:#EDE8DF;--muted:#6B7A8D;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,16,32,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:0 5vw}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1200px;margin:0 auto}
+.nav-logo{display:flex;flex-direction:column;gap:0}
+.nav-logo-en{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:2px;line-height:1}
+.nav-logo-ur{font-size:12px;color:var(--teal);line-height:1;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:0.5px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy-deep)!important;padding:8px 18px;border-radius:3px;font-weight:700!important;letter-spacing:1px!important;font-size:11px!important}
+.nav-cta:hover{background:#E0BC5C!important;color:var(--navy-deep)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy-deep);border-bottom:1px solid rgba(201,168,76,0.2);padding:20px 5vw;z-index:99}
+.mobile-menu a{display:block;padding:12px 0;font-size:14px;color:rgba(255,255,255,0.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-menu a:last-child{border:none;color:var(--gold);font-weight:600;margin-top:8px}
+.mobile-menu.open{display:block}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--navy-deep);display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 5vw 60px}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 70% 50%,rgba(42,127,140,0.06) 0%,transparent 70%)}
+/* Tarazoo SVG watermark */
+.hero-mark{position:absolute;right:-40px;top:50%;transform:translateY(-50%);opacity:0.04;width:520px;height:520px}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid rgba(201,168,76,0.25);padding:6px 14px;border-radius:20px;margin-bottom:24px}
+.hero-badge span{font-size:10px;font-weight:600;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:12px;letter-spacing:-0.5px}
+.h1-urdu{font-size:clamp(20px,2.5vw,28px);color:var(--gold);font-weight:600;margin-bottom:20px;font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;direction:rtl;text-align:left}
+.hero-tagline{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.7;max-width:460px}
+.hero-tagline strong{color:var(--gold)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.pill{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy-deep);padding:14px 28px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:#E0BC5C;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.2);padding:14px 28px;border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-card{background:var(--navy-mid);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:32px;width:100%;max-width:360px}
+.hc-head{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.hc-icon{width:44px;height:44px;background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.hc-title{font-size:13px;font-weight:600;color:var(--white)}
+.hc-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.hc-stat{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.hc-stat:last-child{border:none}
+.hc-label{font-size:11px;color:var(--muted)}
+.hc-val{font-size:12px;font-weight:600;color:var(--gold)}
+.hc-divider{height:1px;background:rgba(201,168,76,0.15);margin:16px 0}
+.hc-btn{display:block;text-align:center;background:var(--gold);color:var(--navy-deep);padding:11px;border-radius:4px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:1px;margin-top:16px}
+
+/* ── TRUST BAR ── */
+.trust{background:var(--navy);padding:18px 5vw;border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15)}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px}
+.trust-item svg{color:var(--gold)}
+.trust-item span{font-size:12px;color:rgba(255,255,255,0.5);font-weight:500}
+.trust-item strong{color:var(--gold)}
+.trust-sep{width:1px;height:28px;background:rgba(255,255,255,0.1)}
+
+/* ── SECTIONS ── */
+section{padding:80px 5vw}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:15px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:48px}
+.section-title-wh{color:var(--white)}
+.section-sub-wh{color:rgba(255,255,255,0.5)}
+
+/* ── SERVICES ── */
+#services{background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:var(--white);border:1px solid rgba(201,168,76,0.15);border-radius:10px;padding:28px;transition:all .25s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,42,74,0.12);border-color:var(--gold)}
+.sc-icon{width:48px;height:48px;background:var(--gold-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.sc-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.sc-body{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.sc-price{font-size:13px;font-weight:700;color:var(--gold)}
+.sc-link{font-size:12px;color:var(--teal);text-decoration:none;font-weight:500}
+.sc-link:hover{text-decoration:underline}
+
+/* ── HOW IT WORKS ── */
+#how{background:var(--navy-deep)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step-card{text-align:center;padding:24px 16px}
+.step-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:rgba(201,168,76,0.2);line-height:1;margin-bottom:12px}
+.step-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:8px}
+.step-body{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+.step-arrow{display:flex;align-items:center;justify-content:center;color:rgba(201,168,76,0.3);font-size:24px;padding-top:36px}
+
+/* ── PRICING ── */
+#pricing{background:var(--white)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{border:1px solid rgba(201,168,76,0.2);border-radius:10px;overflow:hidden;transition:all .2s}
+.price-card:hover{box-shadow:0 8px 32px rgba(27,42,74,0.1)}
+.price-card.featured{border-color:var(--gold);position:relative}
+.pc-badge{background:var(--gold);color:var(--navy-deep);font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 12px;text-align:center;text-transform:uppercase}
+.pc-head{background:var(--navy);padding:24px;text-align:center}
+.pc-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px}
+.pc-price{font-size:28px;font-weight:700;color:var(--gold)}
+.pc-unit{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.pc-body{padding:20px}
+.pc-item{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--warm);font-size:13px;color:var(--navy)}
+.pc-item:last-child{border:none}
+.pc-check{color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+.pc-btn{display:block;text-align:center;background:var(--gold);color:var(--navy-deep);padding:12px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;margin:16px 20px 20px;letter-spacing:0.5px;transition:background .2s}
+.pc-btn:hover{background:#E0BC5C}
+.pc-btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.pc-btn.outline:hover{background:var(--gold-pale)}
+.pricing-note{text-align:center;margin-top:24px;font-size:12px;color:var(--muted)}
+.pricing-note strong{color:var(--navy)}
+
+/* ── ABOUT ── */
+#about{background:var(--navy)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-visual{background:var(--navy-mid);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:36px;text-align:center}
+.av-icon{width:80px;height:80px;background:var(--gold-pale);border:2px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.av-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:6px}
+.av-sub{font-size:12px;color:var(--gold);margin-bottom:20px;letter-spacing:1px}
+.av-stat{display:flex;justify-content:space-around;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08)}
+.av-stat-item{text-align:center}
+.av-stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.av-stat-label{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:1px;text-transform:uppercase}
+.about-content .section-tag{color:var(--teal)}
+.about-list{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.about-item{display:flex;align-items:flex-start;gap:12px}
+.ai-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.ai-text{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6}
+
+/* ── CONTACT ── */
+#contact{background:var(--off)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-card{background:var(--navy);border-radius:10px;padding:28px;display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.06)}
+.cc-icon{width:42px;height:42px;background:var(--gold-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc-title{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.cc-val{font-size:14px;color:var(--white);font-weight:500}
+.cc-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:var(--white);padding:16px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;margin-top:8px;transition:background .2s}
+.wa-btn:hover{background:#1DB954}
+.form-section{background:var(--white);border-radius:10px;padding:32px;border:1px solid rgba(201,168,76,0.15)}
+.form-title{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--warm)}
+.form-btn{display:flex;align-items:center;gap:12px;background:var(--off);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:16px;text-decoration:none;margin-bottom:12px;transition:all .2s}
+.form-btn:hover{border-color:var(--gold);background:rgba(201,168,76,0.05);transform:translateX(4px)}
+.fb-icon{width:40px;height:40px;background:var(--gold-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fb-title{font-size:13px;font-weight:600;color:var(--navy)}
+.fb-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.fb-arrow{margin-left:auto;color:var(--gold);font-size:18px}
+
+/* ── FAQ ── */
+#faq{background:var(--white)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.faq-item{border:1px solid rgba(201,168,76,0.15);border-radius:8px;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:var(--off)}
+.faq-q:hover{background:rgba(201,168,76,0.06)}
+.faq-toggle{color:var(--gold);font-size:18px;font-weight:300;transition:transform .2s;flex-shrink:0}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:all .3s;font-size:13px;color:var(--muted);line-height:1.7;background:var(--white)}
+.faq-item.open .faq-a{padding:12px 20px 16px;max-height:200px}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-deep);border-top:1px solid rgba(201,168,76,0.15);padding:48px 5vw 24px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .nav-logo-en{font-size:22px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.7;max-width:260px}
+.footer-col h4{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+.footer-tagline{font-size:12px;color:var(--gold);font-weight:500;letter-spacing:1px}
+.footer-ur{font-size:14px;color:var(--teal)}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .trust-sep{display:none}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .services-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  section{padding:60px 5vw}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-secondary{text-align:center}
+}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" style="text-decoration:none">
+      <div class="nav-logo-en">DASTAWAIZ</div>
+      <div class="nav-logo-ur">دستاویز</div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#how" onclick="toggleMenu()">How It Works</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()">Get Started →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <!-- Tarazoo watermark -->
+  <svg class="hero-mark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="100" y1="20" x2="100" y2="175" stroke="white" stroke-width="3"/>
+    <circle cx="100" cy="20" r="7" fill="white"/>
+    <line x1="30" y1="55" x2="170" y2="55" stroke="white" stroke-width="3"/>
+    <circle cx="100" cy="55" r="5" fill="black" stroke="white" stroke-width="2"/>
+    <line x1="30" y1="55" x2="10" y2="105" stroke="white" stroke-width="2"/>
+    <line x1="30" y1="55" x2="50" y2="105" stroke="white" stroke-width="2"/>
+    <path d="M5,105 Q30,128 55,105" fill="none" stroke="white" stroke-width="3"/>
+    <line x1="170" y1="55" x2="150" y2="105" stroke="white" stroke-width="2"/>
+    <line x1="170" y1="55" x2="190" y2="105" stroke="white" stroke-width="2"/>
+    <path d="M145,105 Q170,128 195,105" fill="none" stroke="white" stroke-width="3"/>
+    <line x1="86" y1="175" x2="114" y2="175" stroke="white" stroke-width="3"/>
+    <line x1="76" y1="183" x2="124" y2="183" stroke="white" stroke-width="2"/>
+    <circle cx="170" cy="20" r="12" fill="white"/>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="hero-dot"></div><span>Now Live · Pakistan's Legal Document Platform</span></div>
+      <h1>Legal Documents.<br/>Done Right.</h1>
+      <div class="h1-urdu">قانونی دستاویزات، اب آن لائن</div>
+      <p class="hero-tagline">Professional contract drafting, review, and legal consultation — <strong>by an Advocate High Court</strong>. Fully remote. 48-hour delivery.</p>
+      <div class="hero-pills">
+        <span class="pill">NDA</span>
+        <span class="pill">Employment</span>
+        <span class="pill">Freelancer</span>
+        <span class="pill">Partnership</span>
+        <span class="pill">Software Dev</span>
+        <span class="pill">Shareholders</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Create My Contract</a>
+        <a href="#services" class="btn-secondary">View Services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hc-head">
+          <div class="hc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+          </div>
+          <div>
+            <div class="hc-title">Quick Quote</div>
+            <div class="hc-sub">Typical turnaround times</div>
+          </div>
+        </div>
+        <div class="hc-stat"><span class="hc-label">NDA / Simple Contract</span><span class="hc-val">24 hours</span></div>
+        <div class="hc-stat"><span class="hc-label">Employment / Freelancer</span><span class="hc-val">24–36 hours</span></div>
+        <div class="hc-stat"><span class="hc-label">Contract Review</span><span class="hc-val">24 hours</span></div>
+        <div class="hc-stat"><span class="hc-label">Partnership / Shareholders</span><span class="hc-val">48 hours</span></div>
+        <div class="hc-stat"><span class="hc-label">Urgent (any service)</span><span class="hc-val">+50% · 12 hrs</span></div>
+        <div class="hc-divider"></div>
+        <a href="https://wa.me/923289477707" target="_blank" class="hc-btn">WhatsApp Us Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+      <span><strong>Advocate High Court</strong> — verified legal professional</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+      <span><strong>48-hour</strong> turnaround guaranteed</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <span><strong>100% confidential</strong> — all documents protected</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span><strong>Fully remote</strong> — serve all of Pakistan</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Legal Services, Delivered Online</h2>
+    <p class="section-sub">Every document reviewed by a practising Advocate. No templates. No guesswork. Legal protection you can rely on.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="sc-title">Contract Drafting</div>
+        <div class="sc-body">Custom legal contracts drafted from scratch — tailored to your specific situation, not a generic template.</div>
+        <div class="sc-price">From PKR 2,500</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <div class="sc-title">Contract Review</div>
+        <div class="sc-body">Send us any contract. We review every clause, flag risks, and give you a written report before you sign.</div>
+        <div class="sc-price">From PKR 4,000</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="sc-title">Legal Consultation</div>
+        <div class="sc-body">Written legal opinion on your question — from an Advocate. Delivered within 24 hours by email or WhatsApp.</div>
+        <div class="sc-price">PKR 2,500</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="sc-title">NDA Agreement</div>
+        <div class="sc-body">Non-disclosure agreements for freelancers, businesses, partnerships, and employer-employee relationships.</div>
+        <div class="sc-price">PKR 2,500</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="sc-title">Employment Contract</div>
+        <div class="sc-body">Legally sound employment agreements covering salary, duties, confidentiality, termination and dispute resolution.</div>
+        <div class="sc-price">PKR 4,000</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg></div>
+        <div class="sc-title">IT & Software Contracts</div>
+        <div class="sc-body">Software development agreements, IT service contracts, and freelancer agreements tailored for Pakistan's tech industry.</div>
+        <div class="sc-price">From PKR 3,500</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-tag" style="color:var(--teal)">The Process</div>
+    <h2 class="section-title section-title-wh">How It Works</h2>
+    <p class="section-sub section-sub-wh">Simple. Fast. Professional. From your first message to the final document.</p>
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">01</div>
+        <div class="step-title">Submit Your Request</div>
+        <div class="step-body">Fill our quick form or WhatsApp us directly. Tell us what you need — we'll confirm details within 2 hours.</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">02</div>
+        <div class="step-title">Receive Your Quote</div>
+        <div class="step-body">We send a fixed price quote. No hidden charges. Pay via bank transfer, Easypaisa, JazzCash, or Raast.</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">03</div>
+        <div class="step-title">We Draft & Review</div>
+        <div class="step-body">Our Advocate drafts or reviews your document. Every clause checked. Every risk flagged.</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">04</div>
+        <div class="step-title">Delivered to You</div>
+        <div class="step-body">Final document delivered by email or WhatsApp within 48 hours. One free revision included.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-tag">Transparent Pricing</div>
+    <h2 class="section-title">Fixed Fees. No Surprises.</h2>
+    <p class="section-sub">All prices in Pakistani Rupees. One free revision on every document. Urgent delivery available at +50%.</p>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="pc-head">
+          <div class="pc-title">Individual</div>
+          <div class="pc-price">PKR 2,500+</div>
+          <div class="pc-unit">per document</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-item"><span class="pc-check">✓</span>NDA — PKR 2,500</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Legal Question — PKR 2,500</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Freelancer Agreement — PKR 3,500</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Lease Agreement — PKR 3,500</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Employment Contract — PKR 4,000</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Contract Review — PKR 4,000</div>
+          <div class="pc-item"><span class="pc-check">✓</span>1 free revision included</div>
+        </div>
+        <a href="#contact" class="pc-btn outline">Get a Quote</a>
+      </div>
+      <div class="price-card featured fade-up">
+        <div class="pc-badge">Most Popular</div>
+        <div class="pc-head">
+          <div class="pc-title">Startup Pack</div>
+          <div class="pc-price">PKR 14,000</div>
+          <div class="pc-unit">any 3 documents</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-item"><span class="pc-check">✓</span>Any 3 documents of your choice</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Save up to 30% vs individual</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Priority 48-hour delivery</div>
+          <div class="pc-item"><span class="pc-check">✓</span>2 free revisions per document</div>
+          <div class="pc-item"><span class="pc-check">✓</span>WhatsApp support included</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Ideal for new businesses</div>
+        </div>
+        <a href="#contact" class="pc-btn">Start Now</a>
+      </div>
+      <div class="price-card fade-up">
+        <div class="pc-head">
+          <div class="pc-title">IT Business Pack</div>
+          <div class="pc-price">PKR 22,000</div>
+          <div class="pc-unit">5 documents</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-item"><span class="pc-check">✓</span>NDA + Software Dev Agreement</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Employment + Freelancer Contract</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Partnership or Shareholders Agreement</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Tailored for IT exporters + PSEB firms</div>
+          <div class="pc-item"><span class="pc-check">✓</span>3 revisions per document</div>
+          <div class="pc-item"><span class="pc-check">✓</span>Priority support</div>
+        </div>
+        <a href="#contact" class="pc-btn outline">Get Started</a>
+      </div>
+    </div>
+    <p class="pricing-note">Urgent delivery (12 hours): <strong>+50% on any service</strong> · Complex corporate contracts quoted individually · All prices inclusive</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">Who We Are</div>
+        <h2 class="section-title section-title-wh">Built by a Lawyer.<br/>Built for Pakistan.</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:20px">DASTAWAIZ was created by a practising Advocate with experience in corporate law, commercial contracts, and civil litigation before the High Court.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8">We saw too many Pakistani businesses — freelancers, IT exporters, startups — operating with no contracts or with documents downloaded from foreign websites that don't apply to Pakistani law.</p>
+        <div class="about-list">
+          <div class="about-item"><div class="ai-dot"></div><div class="ai-text">Every document is drafted or reviewed by a qualified Advocate — not an AI, not a paralegal</div></div>
+          <div class="about-item"><div class="ai-dot"></div><div class="ai-text">Contracts drafted under Pakistani law — not copy-pasted foreign templates</div></div>
+          <div class="about-item"><div class="ai-dot"></div><div class="ai-text">Fully remote — serving clients across Pakistan without office visits</div></div>
+          <div class="about-item"><div class="ai-dot"></div><div class="ai-text">Affordable fixed pricing — no surprise fees, no hourly billing</div></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="av-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="av-title">DASTAWAIZ Legal</div>
+        <div class="av-sub">ADVOCATE HIGH COURT · LAHORE</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7">Corporate Law · Commercial Contracts<br/>Civil Litigation · Legal Documentation</p>
+        <div class="av-stat">
+          <div class="av-stat-item"><div class="av-stat-num">48h</div><div class="av-stat-label">Delivery</div></div>
+          <div class="av-stat-item"><div class="av-stat-num">8+</div><div class="av-stat-label">Services</div></div>
+          <div class="av-stat-item"><div class="av-stat-num">PK</div><div class="av-stat-label">Law</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get in Touch</div>
+    <h2 class="section-title">Start Your Contract Today</h2>
+    <p class="section-sub">Choose how you want to proceed — fill a form or WhatsApp us directly. We respond within 2 hours.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card">
+          <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div>
+            <div class="cc-title">WhatsApp</div>
+            <div class="cc-val">0328 9477707</div>
+            <div class="cc-sub">Mon–Sat · 9am–7pm · Response within 2 hours</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="cc-title">Email</div>
+            <div class="cc-val">dastawaizpk@gmail.com</div>
+            <div class="cc-sub">For formal requests and document submissions</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="cc-title">Location</div>
+            <div class="cc-val">DHA Phase 1, Lahore</div>
+            <div class="cc-sub">Serving all of Pakistan — fully remote</div>
+          </div>
+        </div>
+        <a href="https://wa.me/923289477707?text=Hello%20DASTAWAIZ%2C%20I%20need%20help%20with%20a%20legal%20document." target="_blank" class="wa-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp Now
+        </a>
+      </div>
+      <div class="form-section">
+        <div class="form-title">Choose a Service to Get Started</div>
+        <a href="https://wa.me/923289477707?text=I%20want%20to%20create%20a%20new%20contract" target="_blank" class="form-btn">
+          <div class="fb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div>
+            <div class="fb-title">Create a New Contract</div>
+            <div class="fb-sub">NDA, Employment, Freelancer, Partnership & more</div>
+          </div>
+          <div class="fb-arrow">→</div>
+        </a>
+        <a href="https://wa.me/923289477707?text=I%20want%20to%20review%20my%20contract" target="_blank" class="form-btn">
+          <div class="fb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+          <div>
+            <div class="fb-title">Review My Existing Contract</div>
+            <div class="fb-sub">Clause-by-clause review and risk report</div>
+          </div>
+          <div class="fb-arrow">→</div>
+        </a>
+        <a href="https://wa.me/923289477707?text=I%20have%20a%20legal%20question" target="_blank" class="form-btn">
+          <div class="fb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div>
+            <div class="fb-title">Ask a Legal Question</div>
+            <div class="fb-sub">Written legal opinion · PKR 2,500 · 24 hours</div>
+          </div>
+          <div class="fb-arrow">→</div>
+        </a>
+        <a href="https://wa.me/923289477707?text=I%20am%20interested%20in%20a%20package" target="_blank" class="form-btn">
+          <div class="fb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <div>
+            <div class="fb-title">View Packages</div>
+            <div class="fb-sub">Freelancer Pack · Startup Pack · IT Business Pack</div>
+          </div>
+          <div class="fb-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Frequently Asked</h2>
+    <p class="section-sub" style="margin-bottom:32px">Everything you need to know before getting started.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Are these real legal contracts valid in Pakistan? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes. All documents are drafted under Pakistani law by a practising Advocate High Court. They are legally valid, enforceable, and court-ready.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I pay? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">We accept bank transfer, Easypaisa, JazzCash, and Raast. Payment details are shared after you confirm your requirement. Documents delivered after payment confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I get a contract urgently? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes. Urgent delivery (12 hours) is available at +50% on the standard price. Just mention "urgent" when you contact us and we will prioritise immediately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is my information kept confidential? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Absolutely. All information shared with us is strictly confidential. We are bound by professional legal ethics as Advocates. Your documents and details are never shared with third parties.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you offer revisions? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes — one free revision is included with every document. Revisions are delivered within 24 hours. Additional revisions can be arranged at a small fee.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can you draft contracts for IT companies? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes. We specialise in IT sector contracts — software development agreements, IT service contracts, NDA for tech businesses, freelancer agreements, and employment contracts for IT firms. We understand PSEB and IT export requirements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo-en" style="font-size:22px">DASTAWAIZ</div>
+        <div class="nav-logo-ur" style="font-size:15px;margin-top:4px">دستاویز</div>
+        <p>Legal · Digital · Secure<br/>Professional legal documents by an Advocate High Court. Serving Pakistan online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Contract Drafting</a>
+        <a href="#services">Contract Review</a>
+        <a href="#services">Legal Consultation</a>
+        <a href="#services">NDA Agreement</a>
+        <a href="#services">Employment Contract</a>
+        <a href="#services">IT Contracts</a>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <a href="#pricing">Individual Documents</a>
+        <a href="#pricing">Freelancer Pack</a>
+        <a href="#pricing">Startup Pack</a>
+        <a href="#pricing">IT Business Pack</a>
+        <a href="#pricing">Urgent Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/923289477707" target="_blank">WhatsApp: 0328 9477707</a>
+        <a href="mailto:dastawaizpk@gmail.com">dastawaizpk@gmail.com</a>
+        <a href="#contact">DHA Phase 1, Lahore</a>
+        <a href="#faq">FAQ</a>
+        <a href="#about">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 DASTAWAIZ Legal. All rights reserved. · dastawaiz.com</div>
+      <div class="footer-tagline">Legal · Digital · Secure · قانونی · ڈیجیٹل · محفوظ</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923289477707?text=Hello%20DASTAWAIZ%2C%20I%20need%20help%20with%20a%20legal%20document." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Mobile menu
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// FAQ
+function toggleFaq(el){
+  const item=el.parentElement;
+  document.querySelectorAll('.faq-item.open').forEach(i=>{if(i!==item)i.classList.remove('open')});
+  item.classList.toggle('open');
+}
+
+// Scroll animations
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// Active nav
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  nav.style.background=window.scrollY>20?'rgba(10,16,32,0.98)':'rgba(10,16,32,0.97)';
+});
+</script>
+</body>
+</html>
