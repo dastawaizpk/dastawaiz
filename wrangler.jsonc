@@ -1,0 +1,7 @@
+{
+  "name": "dastawaiz",
+  "main": "_worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/api/*"] },
+  "kv_namespaces": [{ "binding": "UPLOADS", "id": "7f62f1a72cf04f549d22e225457be66e" }]
+}
