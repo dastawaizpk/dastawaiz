@@ -4,9 +4,11 @@ const sniff=(b,T)=>T.find(([m,o])=>m.every((v,k)=>b[o+k]===v));
 const J=(o,s=200)=>new Response(JSON.stringify(o),{status:s,headers:{"content-type":"application/json","cache-control":"no-store"}});
 const TTL=90*86400,STAT=["New","In progress","Awaiting client","Quoted","Delivered","Closed"];
 const clean=(s,n)=>String(s||"").replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,"").trim().slice(0,n);
-async function notify(env,r){if(!env.TG_TOKEN||!env.TG_CHAT)return;
- const t=`🆕 DASTAWAIZ ${r.id}\n${r.name} · ${r.phone}\n${r.service}${r.voice?" · 🎙 voice note":""}${r.terms?" · 📝 special terms":""}\n${r.notes.slice(0,200)}`;
- try{await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({chat_id:env.TG_CHAT,text:t})})}catch{}}
+async function notify(env,r){
+ const topic=env.NTFY_TOPIC||"dastawaiz-c93ac7ff3373";
+ const body=`${r.id} · ${r.service||"General"}${r.voice?" · voice note":""}${r.terms?" · special terms":""}${r.files.length?" · "+r.files.length+" file(s)":""}`;
+ try{await fetch(`https://ntfy.sh/${topic}`,{method:"POST",body,headers:{"Title":"New DASTAWAIZ client request","Tags":"bell","Priority":"high","Click":"https://dastawaiz.com/api/admin"}})}catch{}
+ if(env.TG_TOKEN&&env.TG_CHAT){try{await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({chat_id:env.TG_CHAT,text:"New DASTAWAIZ request "+body})})}catch{}}}
 async function upload(request,env,ctx){
  if(!env.UPLOADS)return J({ok:false,error:"Storage not configured"},500);
  const len=+request.headers.get("content-length")||0;if(len>70*1048576)return J({ok:false,error:"Too large"},413);
