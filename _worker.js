@@ -47,12 +47,12 @@ const PANEL=`<!doctype html><html lang=en><meta charset=utf8><meta name=viewport
 h1{font-size:1.3rem;margin:4px 0}.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}.bar>*{min-width:0}input,select,textarea,button{font:inherit;padding:8px;border:1px solid var(--l);border-radius:8px;background:var(--c);color:var(--fg)}button{cursor:pointer}button.p{background:var(--a);color:#fff;border:0}
 .card{background:var(--c);border:1px solid var(--l);border-left:5px solid var(--a);border-radius:12px;padding:12px;margin:10px 0}.card.n{border-left-color:#e8590c}.tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:12px;background:var(--a);color:#fff;margin-right:4px}.tag.u{background:#d33}
 .terms{background:#fff8d6;color:#1c1b2e;border-radius:8px;padding:8px 10px;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.m{color:var(--m);font-size:.85rem}audio{width:100%;margin:6px 0}a{color:var(--a)}
-.row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.row>*{flex:1 1 140px;min-width:0}#bd{background:#d33;color:#fff;border-radius:12px;padding:0 9px;font-size:.85rem}</style>
+.row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.row>*{flex:1 1 140px;min-width:0}#tb{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}#tb button{flex:1 1 140px;font-weight:700}#tb button.on{background:var(--a);color:#fff;border-color:var(--a)}#tb i{font-style:normal;background:#d33;color:#fff;border-radius:10px;padding:0 7px;margin-left:6px;font-size:.8rem}#bd{background:#d33;color:#fff;border-radius:12px;padding:0 9px;font-size:.85rem}</style>
 <main><h1>DASTAWAIZ Consultant Panel <span id=bd hidden></span></h1>
-<div class=bar><input id=q placeholder="Search name, phone, ID…" style="flex:1 1 200px"><select id=fs><option value="">All statuses</option></select><select id=fa><option value="">All consultants</option></select><button id=nt class=p>🔔 Enable alerts</button><button id=cs>⬇ CSV</button></div>
+<div id=tb></div><div class=bar><input id=q placeholder="Search name, phone, ID…" style="flex:1 1 200px"><select id=fs><option value="">All statuses</option></select><select id=fa><option value="">All consultants</option></select><button id=nt class=p>🔔 Enable alerts</button><button id=cs>⬇ CSV</button></div>
 <div class=m id=st></div><div id=ls></div></main>
 <script>
-const K=new URLSearchParams(location.search).get("key")||"",H={"x-key":K},ST=${JSON.stringify(STAT)};let R=[],seen=new Set(),first=true;
+const K=new URLSearchParams(location.search).get("key")||"",H={"x-key":K},ST=${JSON.stringify(STAT)};let R=[],seen=new Set(),first=true,T="";const CAT=r=>/translat/i.test(r.service||"")?"t":/create|pack/i.test(r.service||"")?"c":"o",TABS=[["","📋 All"],["c","📝 Document Creation"],["t","🌐 Translation"],["o","🔎 Review & Other"]];
 const $=i=>document.getElementById(i),E=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 for(const s of ST){$("fs").append(new Option(s,s))}
 const beep=()=>{try{const a=new AudioContext(),o=a.createOscillator();o.connect(a.destination);o.frequency.value=880;o.start();o.stop(a.currentTime+.25)}catch{}};
@@ -62,8 +62,9 @@ async function load(){let d;try{d=await api("/api/records")}catch{return}R=d.rec
  if(!first&&nw.length){beep();if(Notification.permission==="granted")new Notification("New client submission",{body:nw.map(r=>r.name+" · "+r.service).join("\\n")})}
  R.forEach(r=>seen.add(r.id));first=false;const un=R.filter(r=>!r.seen).length;$("bd").hidden=!un;$("bd").textContent=un+" new";document.title=(un?"("+un+") ":"")+"DASTAWAIZ Consultant Panel";
  const as=[...new Set(R.map(r=>r.assignee).filter(Boolean))];const cur=$("fa").value;$("fa").length=1;as.forEach(a=>$("fa").append(new Option(a,a)));$("fa").value=cur;draw()}
-function draw(){const q=$("q").value.toLowerCase(),fs=$("fs").value,fa=$("fa").value,L=$("ls");L.textContent="";
- const v=R.filter(r=>(!fs||r.status===fs)&&(!fa||r.assignee===fa)&&(!q||(r.name+r.phone+r.id).toLowerCase().includes(q)));$("st").textContent=v.length+" of "+R.length+" · auto-refreshes every 20 s";
+function tabs(){const b=$("tb");b.textContent="";for(const[k,n]of TABS){const e=E("button",k===T?"on":"",n),c=R.filter(r=>!r.seen&&(!k||CAT(r)===k)).length;if(c)e.append(E("i",0,c));e.onclick=()=>{T=k;draw()};b.append(e)}}
+function draw(){tabs();const q=$("q").value.toLowerCase(),fs=$("fs").value,fa=$("fa").value,L=$("ls");L.textContent="";
+ const v=R.filter(r=>(!T||CAT(r)===T)&&(!fs||r.status===fs)&&(!fa||r.assignee===fa)&&(!q||(r.name+r.phone+r.id).toLowerCase().includes(q)));$("st").textContent=v.length+" shown of "+R.length+" total · auto-refreshes every 20 s";
  for(const r of v){const c=E("div","card"+(r.seen?"":" n")),h=E("div");if(!r.seen)h.append(E("span","tag u","NEW"));h.append(E("span","tag",r.status),E("b",0,r.id+" · "+r.name));c.append(h);
   c.append(E("div","m",new Date(r.time).toLocaleString()+" · "+r.service));
   const w=E("a",0,r.phone);w.href="https://wa.me/"+r.phone.replace(/\\D/g,"").replace(/^0/,"92")+"?text="+encodeURIComponent("Assalam o Alaikum "+r.name+", this is DASTAWAIZ regarding your request "+r.id+".");w.target="_blank";w.rel="noopener";const pd=E("div",0,"📱 ");pd.append(w);c.append(pd);
