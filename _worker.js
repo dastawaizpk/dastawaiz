@@ -8,6 +8,7 @@ async function notify(env,r){
  const topic=env.NTFY_TOPIC||"dastawaiz-c93ac7ff3373";
  const body=`${r.id} · ${r.service||"General"}${r.voice?" · voice note":""}${r.terms?" · special terms":""}${r.files.length?" · "+r.files.length+" file(s)":""}`;
  try{await fetch(`https://ntfy.sh/${topic}`,{method:"POST",body,headers:{"Title":"New DASTAWAIZ client request","Tags":"bell","Priority":"high","Click":"https://dastawaiz.com/api/admin"}})}catch{}
+ try{await fetch("https://formsubmit.co/ajax/"+(env.ALERT_EMAIL||"dastawaizpk@gmail.com"),{method:"POST",headers:{"content-type":"application/json","accept":"application/json"},body:JSON.stringify({_subject:"New DASTAWAIZ client request "+r.id,_template:"table",request:body,panel:"https://dastawaiz.com/api/admin"})})}catch{}
  if(env.TG_TOKEN&&env.TG_CHAT){try{await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({chat_id:env.TG_CHAT,text:"New DASTAWAIZ request "+body})})}catch{}}}
 async function upload(request,env,ctx){
  if(!env.UPLOADS)return J({ok:false,error:"Storage not configured"},500);
